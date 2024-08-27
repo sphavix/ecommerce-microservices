@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "1Ru8AXAd+3ZGg/fsEcCTZ80dZcS+Dpm9fQIWIm/Ho52xv1FKDPp2ietGj3IG1UyMpt6WKxXt1GNYoYEmkvR34Q==",
+  "success": true,
+  "projectFilePath": "H:\\2024\\SideProjects\\ecommerce-microservices\\Online.Shopping.WebApp\\Online.Shopping.WebApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hackethon\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
