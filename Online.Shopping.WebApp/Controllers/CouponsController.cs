@@ -27,6 +27,7 @@ namespace Online.Shopping.WebApp.Controllers
             return View(coupons);
         }
 
+        [HttpGet]
         public async Task<IActionResult> CreateCoupon()
         {
             return View();
