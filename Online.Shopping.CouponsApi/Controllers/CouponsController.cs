@@ -121,6 +121,7 @@ namespace Online.Shopping.CouponsApi.Controllers
         }
 
         [HttpDelete]
+        [Route("{id}")]
         public ResponseDto DeleteCoupon(int id)
         {
             try
