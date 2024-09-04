@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Online.Shopping.AuthApi.Data;
+using Online.Shopping.AuthApi.Models;
+using Online.Shopping.AuthApi.Services;
+using Online.Shopping.AuthApi.Services.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,13 +14,22 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Jwt Options Config
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("AuthSettings:JwtOptions"));
+
+// Db config
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("EcommConnection"));
 });
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>()
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+// Identity config
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+
+
 
 var app = builder.Build();
 
