@@ -18,6 +18,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = H:\2024\SideProjects\ecommerce-microservices\Online.Shopping.WebApp
 build_property._RazorSourceGeneratorDebug = 
 
+[H:/2024/SideProjects/ecommerce-microservices/Online.Shopping.WebApp/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/2024/SideProjects/ecommerce-microservices/Online.Shopping.WebApp/Views/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [H:/2024/SideProjects/ecommerce-microservices/Online.Shopping.WebApp/Views/Coupons/CouponsList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cG9uc1xDb3Vwb25zTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
