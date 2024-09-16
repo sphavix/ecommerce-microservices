@@ -28,7 +28,7 @@ namespace Online.Shopping.AuthApi.Controllers
             {
                 _response.IsSuccess = false;
                 _response.Message = errorMessage;
-                return BadRequest();
+                return BadRequest(_response);
             }
 
             return Ok(_response);
@@ -36,9 +36,33 @@ namespace Online.Shopping.AuthApi.Controllers
 
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login()
+        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
-            return Ok();
+            var loginResponse = await _authService.LoginAsync(loginDto);
+
+            if(loginResponse.User is null)
+            {
+                _response.IsSuccess = false;
+                _response.Message = "Invalid username or password.";
+                return BadRequest(_response);
+            }
+
+            _response.Result = loginResponse;
+            return Ok(_response);
+        }
+
+        [HttpPost("AssignRole")]
+        public async Task<IActionResult> AssignRole([FromBody] RegisterDto registerDto)
+        {
+            var assignRoleSuccess = await _authService.AssignRoleAsync(registerDto.Email, registerDto.Role.ToUpper());
+
+            if (!assignRoleSuccess)
+            {
+                _response.IsSuccess = false;
+                _response.Message = "Unable to assign role!";
+                return BadRequest(_response);
+            }
+            return Ok(_response);
         }
     }
 }
