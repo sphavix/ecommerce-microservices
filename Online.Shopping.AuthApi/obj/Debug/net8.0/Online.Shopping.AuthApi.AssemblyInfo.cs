@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Online.Shopping.AuthApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+590442f18ba270becba9503442d8adab72d3db87")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+690ab0252b3214fe559744a7637d00e7b99d0d1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Online.Shopping.AuthApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Online.Shopping.AuthApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

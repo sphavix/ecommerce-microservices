@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json;
 using Online.Shopping.WebApp.Models;
 using Online.Shopping.WebApp.Models.AuthDtos;
 using Online.Shopping.WebApp.Services.Contracts;
@@ -23,6 +24,24 @@ namespace Online.Shopping.WebApp.Controllers
             return View(loginDto);
         }
 
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginDto loginDto)
+        {
+            ResponseDto result = await _authService.LoginAsync(loginDto);
+
+            if(result != null && result.IsSuccess)
+            {
+                LoginResponseDto response = JsonConvert.DeserializeObject<LoginResponseDto>(Convert.ToString(result.Result));
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ModelState.AddModelError("CustomError", result.Message);
+                return View(loginDto);
+            }
+        }
+
         [HttpGet]
         public IActionResult Register()
         {
@@ -43,7 +62,7 @@ namespace Online.Shopping.WebApp.Controllers
 
             ResponseDto assignRole;
 
-            if(response != null && response.IsSuccess)
+            if(response != null && response.IsSuccess == true)
             {
                 if(string.IsNullOrEmpty(model.Role))
                 {
