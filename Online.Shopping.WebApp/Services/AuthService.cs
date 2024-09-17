@@ -13,7 +13,7 @@ namespace Online.Shopping.WebApp.Services
         {
             _baseService = baseService ?? throw new ArgumentNullException(nameof(baseService));
         }
-        public async Task<ResponseDto> AssignRoleAsync(RegisterDto registerDto)
+        public async Task<ResponseDto?> AssignRoleAsync(RegisterDto registerDto)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
@@ -23,7 +23,7 @@ namespace Online.Shopping.WebApp.Services
             });
         }
 
-        public async Task<ResponseDto> LoginAsync(LoginDto loginDto)
+        public async Task<ResponseDto?> LoginAsync(LoginDto loginDto)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
@@ -33,7 +33,7 @@ namespace Online.Shopping.WebApp.Services
             });
         }
 
-        public async Task<ResponseDto> RegisterAsync(RegisterDto registerDto)
+        public async Task<ResponseDto?> RegisterAsync(RegisterDto registerDto)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
